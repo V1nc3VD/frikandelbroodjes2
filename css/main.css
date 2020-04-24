@@ -8,7 +8,12 @@
 }
 
 
-/*header*/
+/*content*/
+div.content {
+  margin-top: 100px;
+}
+
+/*home*/
 .mainheader {
   height: 100vh;
   background-image: url(../img/hendrik-kuterman-rYxuV6G5asA-unsplash.jpg);
@@ -41,10 +46,6 @@
   color: lightgrey;
 }
 
-
-
-
-
 .homebutton {
   padding: 1rem 3rem;
   background-image: url(&quot;assets/img/frikandelbroodjelogo2.png&quot;);background-color: rgba(238,105,9,0.92);
@@ -59,6 +60,11 @@
   color: white;
 }
 
+/*inloggen/registreren*/
+.registreerform {
+  margin: 0 auto;
+}
+
 
 
 
@@ -71,6 +77,9 @@
     padding: 50px 0;
     color: #f0f9ff;
     background-color: #282d32;
+    position: sticky;
+    
+
   }
   
   .footer-dark h3 {

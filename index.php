@@ -15,17 +15,15 @@
 </head>
 
 <body>
-    <nav class="navbar navbar-dark navbar-expand-lg fixed-top navbar-custom">
-        <div class="container"><a class="navbar-brand" href="#">Frikandelbroodjes</a><button data-toggle="collapse" class="navbar-toggler" data-target="#navbarResponsive"><span class="navbar-toggler-icon"></span></button>
-            <div class="collapse navbar-collapse" id="navbarResponsive">
-                <ul class="nav navbar-nav ml-auto">
-                    <li class="nav-item" role="presentation"><a class="nav-link" href="#">Sign Up</a></li>
-                    <li class="nav-item" role="presentation"><a class="nav-link" href="#">Log In</a></li>
-                </ul>
-            </div>
-        </div>
-    </nav>
+<?php include("./assets/navbar.php");?>
 
+        <?php
+        if (isset($_GET["content"])) {
+            include("./" . $_GET["content"] . ".php");
+        } else {
+            include("home.php");
+        }
+        ?>
 
 <?php include("./assets/footer.html");?>
 
