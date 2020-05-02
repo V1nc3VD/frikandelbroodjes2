@@ -16,7 +16,7 @@
                 {
                     $adminlinks = '<a class="dropdown-item" href="./index.php?content=panel">Administratie</a>';
                 }
-                print('<div class="dropdown ml-auto">                    
+                echo('<div class="dropdown ml-auto">                    
                     <a href="dropdown-toggle" type="button" id="dropdownMenuButton" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">' .
                     'Welkom, ' . $_SESSION["username"] .
                     '<img src="./img/dropdownicon.png" alt="">' .

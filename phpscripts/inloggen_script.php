@@ -31,7 +31,7 @@ if($_SERVER["REQUEST_METHOD"] == "POST"){
     if(empty(trim($_POST["password"]))){
         $password_err = "Please enter your password.";
     } else{
-        $password = trim($_POST["password"]);
+        $password = sanitize($_POST["password"]);
     }
     
     // Validate credentials
@@ -78,7 +78,7 @@ if($_SERVER["REQUEST_METHOD"] == "POST"){
                     }
                 } else{
                     // Display an error message if email doesn't exist
-                    $email_err = "No account found with that email.";
+                    header("Location: ../index.php?content=login&alert=emailnotfound");
                 }
             } else{
                 echo "Oops! Something went wrong. Please try again later.";
