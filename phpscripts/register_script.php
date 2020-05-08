@@ -1,15 +1,15 @@
 <?php 
 if (empty($_POST["email"])) {
-    header("Location: ./index.php?content=message&alert=no-email");
+    header("Location: ../index.php?content=register&alert=emptyemail");
 }
 
 else if (empty($_POST["nickname"])) {
-    print("geen nickname ingevoerd");
+    header("Location: ../index.php?content=register&alert=emptynickname");
 
 } 
 
 else if (empty($_POST["password"])) {
-    print("geen wachtwoord ingevoerd");
+    header("Location: ../index.php?content=register&alert=emptypassword");
 }
 
 
@@ -27,10 +27,10 @@ else {
 
     $result = mysqli_query($conn, $sql);
     if (mysqli_num_rows($result)) {
-        header("Location: ./index.php?content=message&alert=emailexists");
+        header("Location: ../index.php?content=register&alert=emailexists");
     }
     else if ($password != $passwordverify) {
-        print("wachtwoorden komen niet overeen");
+        header("Location: ../index.php?content=register&alert=otherpassword");
     }
     else {
         print("success!");

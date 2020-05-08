@@ -16,6 +16,7 @@
                     <input type="password" class="form-control registreerinput" id="password-verify" name="password-verify" aria-describedby="password" placeholder="">
                     <div class="formbottom">
                         <button type="submit" class="btn btn-primary submitregister">Registreer</button>
+                        <?php echo $alertmessage; ?>
                     </div>
                 </div>
             </form>

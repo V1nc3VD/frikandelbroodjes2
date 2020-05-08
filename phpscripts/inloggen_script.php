@@ -22,14 +22,16 @@ if($_SERVER["REQUEST_METHOD"] == "POST"){
  
     // Check if EMAIL is empty
     if(empty(trim($_POST["email"]))){
-        $email_err = "Vul je email in.";
+        header("Location: ../index.php?content=login&alert=emptyemail");
+        $email_err = true;
     } else{
         $email = sanitize($_POST["email"]);
     }
     
     // Check if password is empty
     if(empty(trim($_POST["password"]))){
-        $password_err = "Please enter your password.";
+        header("Location: ../index.php?content=login&alert=emptypassword");
+        $password_err = true;
     } else{
         $password = sanitize($_POST["password"]);
     }
@@ -73,15 +75,15 @@ if($_SERVER["REQUEST_METHOD"] == "POST"){
                             header("location:  ../index.php?content=home");
                         } else{
                             // Display an error message if password is not valid
-                            $password_err = "The password you entered was not valid.";
+                            header("Location: ../index.php?content=login&alert=wrongpassword");
                         }
                     }
                 } else{
                     // Display an error message if email doesn't exist
-                    header("Location: ../index.php?content=login&alert=emailnotfound");
+                    header("Location: ../index.php?content=login&alert=wrongemail");
                 }
             } else{
-                echo "Oops! Something went wrong. Please try again later.";
+                header("Location: ../index.php?content=login&alert=unknown");
             }
 
             // Close statement
